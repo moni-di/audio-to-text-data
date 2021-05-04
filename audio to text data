@@ -1,0 +1,75 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import speech_recognition as sr"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "r = sr.Recognizer()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#paranthesis of audiofile contains path to recording file in .wav format. use online complier to convert audio file in .wav format."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "hello this is Mohit Sharma I am learning on udemy right now in language processing by KGP torquay from Lakshmi sir I am very feeling good for this course that I am able to learn this is very interesting course thank you\n"
+     ]
+    }
+   ],
+   "source": [
+    "with sr.AudioFile('data/Recording.wav') as source:\n",
+    "    audio = r.listen(source)\n",
+    "    try:\n",
+    "        text = r.recognize_google(audio)\n",
+    "        print(text)\n",
+    "    except:\n",
+    "        print('error, try again !!')"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
